@@ -12,3 +12,10 @@
 > 2. Visual aids: Incorporating visual aids like videos, diagrams, and graphs can help you understand complex concepts faster. These aids help you to break down information into smaller, more manageable parts.
 > 
 > 3. Utilize technology: Utilizing technology can help you learn faster by providing access to a wide range of resources. Online classes, video tutorials, and educational apps can be a great way of supplementing traditional learning methods. Online quizzes can also be a useful tool for testing your knowledge and identifying areas where you need to improve.
+### Tell me 5 interesting fun facts I may not know
+
+> 1. Some species of jellyfish are immortal. They can regenerate fully after being injured or even killed, and can theoretically live forever if they are not preyed upon or succumb to disease.
+> 2. The shortest war in world history was between Great Britain and Zanzibar. It lasted for only 38 minutes on August 27, 1896.
+> 3. The world's oldest piece of chewing gum is over 9,000 years old and was discovered in Finland.
+> 4. The Great Wall of China is not a single wall, but a series of walls and fortifications built over the course of centuries, with some sections dating back over 2,000 years.
+> 5. The largest snowflake ever recorded was 15 inches wide and 8 inches thick. It fell in Montana in 1887.
