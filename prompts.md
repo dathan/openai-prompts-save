@@ -34,3 +34,31 @@
 > 6. Provide testimonials: Before making a purchase, many SMB owners will look at reviews and customer feedback. Having a variety of testimonials from satisfied customers can be the difference in closing the sale.
 > 
 > 7. Follow up: After the initial pitch or presentation, follow up with the customer to offer support, answer questions and have check-ins to maintain the relationship.
+### In golang explain the & and * symbol. When should I use them, and why. Cite sources.
+
+> In GoLang, the & symbol is called the address operator, while the * symbol is called the deference operator. The address operator returns the memory address of a variable, while the dereference operator returns the value stored at a specific memory address.
+> 
+> You should use the & operator when you want to obtain the memory address of a variable. This is often useful when you want to pass a reference to a function instead of copying the entire value. This can save memory and speed up your code. For example, the following code snippet shows how to obtain the memory address of an integer variable:
+> 
+> ```
+> x := 5
+> fmt.Println(&x) // Output: 0xc00008e008
+> ```
+> 
+> On the other hand, you should use the * operator when you want to access the value stored at a specific memory address. This is often useful when you have a pointer to a value and want to manipulate it directly. For example, the following code snippet shows how to use the * operator to update the value of a variable using a pointer:
+> 
+> ```
+> x := 5
+> fmt.Println(x) // Output: 5
+> 
+> p := &x
+> *p = 10
+> fmt.Println(x) // Output: 10
+> ```
+> 
+> Here, we first obtain the memory address of x using the & operator, and then create a pointer to that memory address. We then use the * operator to update the value stored at that memory address, which updates the value of x directly.
+> 
+> Sources:
+> 
+> - Go Documentation - Pointers: https://tour.golang.org/moretypes/1
+> - Go By Example - Pointers: https://gobyexample.com/pointers
