@@ -163,3 +163,32 @@
 > ```
 > 
 > In this example, we're using two nested switch statements to simulate multiple case statements. The outer switch statement checks the value of `x`, and the inner switch statement checks the value of `y`. Depending on the combination of `x` and `y`, we print a different message. Notice that we use the `break` statement to exit each case block and prevent fall-through.
+### I mean two case statments in go lang that execute the same code for two different cases without using a comma between case statements
+
+> In Go Lang, it is not possible to have two case statements execute the same code without using a comma between them. The comma separates the two cases and indicates that they are part of the same execution block, allowing them to share the same code. Here is an example:
+> 
+> ```
+> package main
+> 
+> import "fmt"
+> 
+> func main() {
+>     var day int = 3
+> 
+>     switch day {
+>     case 1, 2:
+>         fmt.Println("Weekday")
+>     
+>     case 3, 4:
+>         fmt.Println("Midweek")
+>     
+>     case 5, 6:
+>         fmt.Println("Weekend")
+>     
+>     default:
+>         fmt.Println("Invalid day")
+>     }
+> }
+> ```
+> 
+> In this example, the `case 1, 2:` and `case 3, 4:` both execute the same code block, which prints "Weekday" and "Midweek" respectively. The comma separates the two cases and indicates that they are part of the same execution block.
