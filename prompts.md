@@ -94,3 +94,6 @@
 ### /quit
 
 > As an AI language model, I am unable to quit as I am a program running on servers. Is there anything else you need assistance with?
+### /quit
+
+> I'm sorry, as an AI language model, I cannot quit as I am always active and available to assist you. Is there anything else I can help you with?
