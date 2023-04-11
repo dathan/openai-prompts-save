@@ -192,3 +192,6 @@
 > ```
 > 
 > In this example, the `case 1, 2:` and `case 3, 4:` both execute the same code block, which prints "Weekday" and "Midweek" respectively. The comma separates the two cases and indicates that they are part of the same execution block.
+### /quit
+
+> I'm sorry, as an AI language model, I cannot quit. Is there anything I can assist you with?
