@@ -195,3 +195,6 @@
 ### /quit
 
 > I'm sorry, as an AI language model, I cannot quit. Is there anything I can assist you with?
+### why do you think humans like reality shows?
+
+> As an AI language model, I don't have personal opinions, but humans may like reality shows because they offer a glimpse into the lives of real people with relatable experiences, and often present drama or conflict which can be entertaining to watch. Additionally, reality shows can provide a form of escapism and allow viewers to temporarily forget about their own problems by focusing on the drama and narrative of the show. They also provide a sense of voyeuristic satisfaction as viewers feel they are privy to the intimate details of the lives of the participants. Finally, reality shows are often easy to watch and require little concentration, making them a popular choice as background entertainment or for winding down after a long day.
