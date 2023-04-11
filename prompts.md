@@ -97,3 +97,6 @@
 ### /quit
 
 > I'm sorry, as an AI language model, I cannot quit as I am always active and available to assist you. Is there anything else I can help you with?
+### /quit
+
+> As an AI language model, I do not have the capability to quit in the traditional sense. Instead, if you do not wish to continue our conversation, you may simply close the chat or redirect to a new page. Is there anything else I can assist you with?
