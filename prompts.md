@@ -62,3 +62,32 @@
 > 
 > - Go Documentation - Pointers: https://tour.golang.org/moretypes/1
 > - Go By Example - Pointers: https://gobyexample.com/pointers
+### Give me a great recipe on Chocolate Cookies ?
+
+> Sure, here's a recipe for delicious and chewy chocolate cookies:
+> 
+> Ingredients:
+> - 1 cup all-purpose flour
+> - 1/2 cup unsweetened cocoa powder
+> - 1 tsp baking soda
+> - 1/4 tsp salt
+> - 1/2 cup unsalted butter, room temperature
+> - 1/2 cup granulated sugar
+> - 1/2 cup brown sugar
+> - 1 large egg
+> - 1 tsp vanilla extract
+> - 1 cup semisweet chocolate chips
+> 
+> Directions:
+> 
+> 1. Preheat oven to 350°F (175°C). Line a baking sheet with parchment paper.
+> 2. In a medium bowl, whisk together flour, cocoa powder, baking soda, and salt.
+> 3. In a large bowl, beat butter and both sugars together until light and fluffy.
+> 4. Add the egg and vanilla extract and beat until well combined.
+> 5. Gradually add the dry ingredients to the wet mixture, stirring until just combined.
+> 6. Fold in the chocolate chips.
+> 7. Using a cookie scoop, drop the dough onto the prepared baking sheet.
+> 8. Bake for 10-12 minutes, or until the edges are set and the centers are still slightly soft.
+> 9. Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack to cool completely.
+> 
+> Enjoy your delicious and decadent chocolate cookies!
