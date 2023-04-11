@@ -115,3 +115,51 @@
 > ``` 
 > 
 > Notice that both cases are separated by commas and share the same code block.
+### what about with two case statements c style
+
+> In C, you can use two nested switch statements to simulate multiple case statements. Here's an example:
+> 
+> ```
+> #include <stdio.h>
+> 
+> int main() {
+>     int x = 2;
+>     int y = 3;
+> 
+>     switch (x) {
+>         case 1:
+>             switch (y) {
+>                 case 2:
+>                     printf("x is 1 and y is 2\n");
+>                     break;
+>                 case 3:
+>                     printf("x is 1 and y is 3\n");
+>                     break;
+>                 default:
+>                     printf("Invalid value for y\n");
+>                     break;
+>             }
+>             break;
+>         case 2:
+>             switch (y) {
+>                 case 2:
+>                     printf("x is 2 and y is 2\n");
+>                     break;
+>                 case 3:
+>                     printf("x is 2 and y is 3\n");
+>                     break;
+>                 default:
+>                     printf("Invalid value for y\n");
+>                     break;
+>             }
+>             break;
+>         default:
+>             printf("Invalid value for x\n");
+>             break;
+>     }
+> 
+>     return 0;
+> }
+> ```
+> 
+> In this example, we're using two nested switch statements to simulate multiple case statements. The outer switch statement checks the value of `x`, and the inner switch statement checks the value of `y`. Depending on the combination of `x` and `y`, we print a different message. Notice that we use the `break` statement to exit each case block and prevent fall-through.
