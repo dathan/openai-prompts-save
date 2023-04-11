@@ -91,3 +91,6 @@
 > 9. Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack to cool completely.
 > 
 > Enjoy your delicious and decadent chocolate cookies!
+### /quit
+
+> As an AI language model, I am unable to quit as I am a program running on servers. Is there anything else you need assistance with?
