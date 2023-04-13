@@ -333,3 +333,111 @@
 > After sending the five numbers, we sleep for a second to give the `worker` time to process them. We then send a message on the `quit` channel to tell the `worker` to quit. This causes the `worker` goroutine to exit, and the program terminates.
 > 
 > Note that if we didn't use a select statement to check for the quit signal, the `worker` goroutine would block indefinitely waiting for more messages on the `c` channel, since we didn't close that channel or send any signal to indicate that no more messages will be sent. This is a common mistake in Go programs, and can lead to deadlocks and other issues. By using a select statement with a timeout or a signal channel (in this case `quit`), we can avoid these problems and write more robust and reliable concurrent programs.
+### show examples for the top 3 golang concurrency patterns
+
+> 1. Goroutines and Channels:
+> Goroutines are lightweight threads that enable concurrent execution of functions in Go. Channels are communication primitives that allow Goroutines to communicate and coordinate their execution. By using goroutines and channels, concurrent programs can achieve faster execution and better resource utilization. Here's an example:
+> 
+> ```go
+> package main
+> 
+> import (
+> 	"fmt"
+> )
+> 
+> func printNumbers(c chan int) {
+> 	for i := 0; i < 5; i++ {
+> 		c <- i
+> 	}
+> 	close(c)
+> }
+> 
+> func main() {
+> 	c := make(chan int)
+> 	go printNumbers(c)
+> 
+> 	for n := range c {
+> 		fmt.Println(n)
+> 	}
+> }
+> ```
+> In this example, the printNumbers function sends integers to the channel c five times. Meanwhile, the main function listens to the channel and prints the received integers. When the printNumbers function is done sending the integers, it closes the channel, indicating to the main function that there are no more values to receive.
+> 
+> 2. Mutexes:
+> In Go, a Mutex is a synchronization primitive used to protect shared resources from concurrent access. By locking and unlocking the Mutex, Goroutines can achieve mutual exclusion and ensure that only one Goroutine is accessing the shared resource at a time. Here's an example:
+> 
+> ```go
+> package main
+> 
+> import (
+> 	"fmt"
+> 	"sync"
+> )
+> 
+> var counter = 0
+> var mutex = &sync.Mutex{}
+> 
+> func increment() {
+> 	mutex.Lock()
+> 	defer mutex.Unlock()
+> 
+> 	counter++
+> 	fmt.Println(counter)
+> }
+> 
+> func main() {
+> 	var wg sync.WaitGroup
+> 
+> 	for i := 0; i < 10; i++ {
+> 		wg.Add(1)
+> 		go func() {
+> 			increment()
+> 			wg.Done()
+> 		}()
+> 	}
+> 
+> 	wg.Wait()
+> }
+> ```
+> In this example, the increment function increments the counter variable by one, and the main function spawns 10 Goroutines to execute the increment function concurrently. To ensure that only one Goroutine can access the counter variable at a time, the increment function uses a Mutex to lock and unlock the shared resource before and after its execution.
+> 
+> 3. Select Statement:
+> In Go, a Select statement is a useful concurrency construct that allows Goroutines to wait on multiple channels simultaneously. The Select statement blocks until one of the channels is ready to communicate, after which it executes the corresponding case. Here's an example:
+> 
+> ```go
+> package main
+> 
+> import (
+> 	"fmt"
+> 	"time"
+> )
+> 
+> func sendGreetings(c chan string) {
+> 	for {
+> 		// Send the current time as a greeting
+> 		c <- fmt.Sprintf("Hello at %v", time.Now())
+> 
+> 		// Wait for 3 seconds before sending the next greeting
+> 		time.Sleep(3 * time.Second)
+> 	}
+> }
+> 
+> func main() {
+> 	c1 := make(chan string)
+> 	c2 := make(chan string)
+> 
+> 	go sendGreetings(c1)
+> 	go sendGreetings(c2)
+> 
+> 	for {
+> 		select {
+> 		case msg1 := <-c1:
+> 			fmt.Println(msg1)
+> 
+> 		case msg2 := <-c2:
+> 			fmt.Println(msg2)
+> 		}
+> 	}
+> }
+> ```
+> In this example, the sendGreetings function sends a greeting to two channels (c1 and c2) every 3 seconds. The main function listens to both channels using the Select statement and prints the received greetings. Since both Goroutines send greetings indefinitely, the main function will keep listening and printing the greetings until it is interrupted.
