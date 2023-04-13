@@ -246,3 +246,34 @@
 > Also, having another field change on input while creating an object from a package function can make it difficult to reason about the state of the object. It can lead to unexpected behavior and make code harder to maintain. 
 > 
 > Therefore, it’s best to separate the concerns of the singleton pattern and the input fields to avoid potential pitfalls.
+### using a go routine that has an exit in it, what if I want the parent to exit if the go routine has a problem, how would I do that?
+
+> There are several ways to do this, but one common approach is to use a channel to signal an error from the go routine to the parent. Here's an example:
+> 
+> ```
+> func myFunc(done chan<- error) {
+>     // do some work...
+>     if err != nil {
+>         done <- err  // signal error
+>         return       // exit go routine
+>     }
+>     // do more work...
+>     done <- nil      // signal success
+> }
+> 
+> func main() {
+>     done := make(chan error)
+>     go myFunc(done)
+>     select {
+>     case err := <-done:
+>         if err != nil {
+>             fmt.Println("Error:", err)
+>             // exit main program or do something else...
+>         }
+>     }
+> }
+> ```
+> 
+> In this example, the `myFunc` go routine takes a `done` channel as input and sends an error to it if something goes wrong. The parent/main program waits for a value on the channel using the `select` statement, and if it receives an error, it can take appropriate action (e.g. print an error message and exit).
+> 
+> Note that the `done` channel is defined as `chan<- error` in the `myFunc` signature, which means it's a "send-only" channel that can only be used to send errors from the go routine. This is a good practice to prevent accidental misuse of the channel.
