@@ -277,3 +277,12 @@
 > In this example, the `myFunc` go routine takes a `done` channel as input and sends an error to it if something goes wrong. The parent/main program waits for a value on the channel using the `select` statement, and if it receives an error, it can take appropriate action (e.g. print an error message and exit).
 > 
 > Note that the `done` channel is defined as `chan<- error` in the `myFunc` signature, which means it's a "send-only" channel that can only be used to send errors from the go routine. This is a good practice to prevent accidental misuse of the channel.
+### Give me 4 concurrency patterns in golang with channels
+
+> 1. Fan-In: This pattern involves multiple goroutines sending data to a single channel, which can then be read by another goroutine. This is useful in situations where multiple streams of data need to be combined into a single stream.
+> 
+> 2. Fan-Out: This pattern involves a single goroutine sending data to multiple channels, which can be read by multiple goroutines. This is useful when multiple routines need to perform the same operation on a stream of data.
+> 
+> 3. Pipeline: This pattern involves a series of stages, where each stage is a goroutine that performs a particular task on the data and sends the result to the next stage through a channel. This is useful in situations where a complex transformation needs to be applied to the data.
+> 
+> 4. Select: This pattern allows a goroutine to listen on multiple channels and respond to the first channel that is ready. This is useful in situations where multiple sources of data need to be processed, but only the first one needs to be acted upon.
