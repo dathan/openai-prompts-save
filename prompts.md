@@ -286,3 +286,50 @@
 > 3. Pipeline: This pattern involves a series of stages, where each stage is a goroutine that performs a particular task on the data and sends the result to the next stage through a channel. This is useful in situations where a complex transformation needs to be applied to the data.
 > 
 > 4. Select: This pattern allows a goroutine to listen on multiple channels and respond to the first channel that is ready. This is useful in situations where multiple sources of data need to be processed, but only the first one needs to be acted upon.
+### in golang show a concurrency pattern using channels that uses select on an error but if no error do not block
+
+> Here is an example of a concurrency pattern in Golang that uses channels and select to check for errors, but does not block if no error is present:
+> 
+> ```
+> package main
+> 
+> import (
+>     "fmt"
+>     "time"
+> )
+> 
+> func worker(c chan int, quit chan bool) {
+>     for {
+>         select {
+>         case n := <-c:
+>             fmt.Println("Received:", n)
+>         case <-quit:
+>             fmt.Println("Quitting...")
+>             return
+>         }
+>     }
+> }
+> 
+> func main() {
+>     c := make(chan int)
+>     quit := make(chan bool)
+>     go worker(c, quit)
+> 
+>     for i := 1; i <= 5; i++ {
+>         c <- i
+>         fmt.Println("Sent:", i)
+>     }
+> 
+>     time.Sleep(time.Second)
+> 
+>     quit <- true
+> }
+> ```
+> 
+> In this example, we have a `worker` function that listens for messages on a `c` channel, and quits when it receives a message on the `quit` channel. In `main`, we create these channels and start a `worker` goroutine. We then send five numbers to the `worker` through the `c` channel.
+> 
+> To ensure that we don't block indefinitely waiting for messages that may never come, we use a select statement to check for messages on the `c` and `quit` channels. If a message is received on `c`, we print it out. If a message is received on `quit`, we break out of the loop and return from the `worker` function.
+> 
+> After sending the five numbers, we sleep for a second to give the `worker` time to process them. We then send a message on the `quit` channel to tell the `worker` to quit. This causes the `worker` goroutine to exit, and the program terminates.
+> 
+> Note that if we didn't use a select statement to check for the quit signal, the `worker` goroutine would block indefinitely waiting for more messages on the `c` channel, since we didn't close that channel or send any signal to indicate that no more messages will be sent. This is a common mistake in Go programs, and can lead to deadlocks and other issues. By using a select statement with a timeout or a signal channel (in this case `quit`), we can avoid these problems and write more robust and reliable concurrent programs.
