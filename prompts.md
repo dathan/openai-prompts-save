@@ -222,3 +222,18 @@
 ### does this work
 
 > I'm sorry, I need more information on what "this" is referring to in order to answer your question accurately.
+### In golang how do you test a map to see if a key exists and get the value if it does. Use ok as the test variable.
+
+> You can test if a key exists in a map in golang by using the "comma ok" idiom. This checks if the key is present in the map and returns a boolean value indicating whether the key exists or not. If the key exists, you can also retrieve the value associated with it using the standard map indexing syntax.
+> 
+> Here's an example:
+> 
+> ```
+> myMap := map[string]int{"a": 1, "b": 2, "c": 3}
+> if value, ok := myMap["b"]; ok {
+>     fmt.Println("Value exists and is:", value)
+> } else {
+>     fmt.Println("Value does not exist")
+> }
+> ```
+> In this example, we check if the key "b" exists in the `myMap` using the "comma ok" idiom. If it does, the value associated with it is retrieved and printed to the console. If not, a message indicating that the value does not exist is printed.
