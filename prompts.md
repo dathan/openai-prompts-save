@@ -216,3 +216,6 @@
 > 5. Affero General Public License Version 1. These licenses extend the GPL and also require the release of all source code in networked environments. This can make it difficult for enterprises that want to maintain their own proprietary software on their intranet or extranet.
 > 
 > It is recommended that enterprises consult with legal professionals to determine which open source licenses are most suitable for their needs.
+### this should fail
+
+> I'm sorry, I don't understand what you are referring to. Can you please provide more context or information?
