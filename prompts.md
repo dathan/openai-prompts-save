@@ -237,3 +237,12 @@
 > }
 > ```
 > In this example, we check if the key "b" exists in the `myMap` using the "comma ok" idiom. If it does, the value associated with it is retrieved and printed to the console. If not, a message indicating that the value does not exist is printed.
+### In golang is it a bad practice to have a field of a struct be a singleton by concept and another field change on input to creating the object from a package function
+
+> As an AI language model, I do not have opinions or beliefs. However, in Go, it is generally not recommended to have a field of a struct be a singleton by concept. 
+> 
+> In Go, the recommended approach is to use the singleton pattern explicitly instead of relying on a specific field to be a singleton. A singleton is a design pattern that restricts the instantiation of a class to one object. Using a singleton pattern can ensure that there is only one instance of an object throughout the program. 
+> 
+> Also, having another field change on input while creating an object from a package function can make it difficult to reason about the state of the object. It can lead to unexpected behavior and make code harder to maintain. 
+> 
+> Therefore, it’s best to separate the concerns of the singleton pattern and the input fields to avoid potential pitfalls.
