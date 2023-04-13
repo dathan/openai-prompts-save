@@ -201,3 +201,18 @@
 ### In golang github.com/sashabaranov/go-openai has createchatcompletion which accepts a context and a openai.ChatCompletionRequest, that accepts a model of gpt-4. Unfortuneatly I am getting an error error, status code: 404, message: The model: `gpt-4` does not exist. Do I need a special account to use gpt-4? I am paying for api access.
 
 > Yes, you need a special permissions to use GPT-4 as it is not yet publicly available. As of now, the latest version of GPT is GPT-3. You may want to try using that instead, or contact OpenAI support to inquire about getting access to GPT-4.
+### what are Open Source Licenses to Avoid for enterprises?
+
+> As an AI language model, I don't have personal opinions or beliefs, but here are some of the licenses that enterprises might want to avoid due to certain limitations or potential risks:
+> 
+> 1. GNU Affero General Public License (AGPL). The AGPL mandates that any modifications or additions to the licensed code must be made available under the same license. This can cause issues for enterprises that want to maintain their own proprietary software.
+> 
+> 2. Reciprocal Licenses. These licenses include provisions that require any software using code under the license also to be licensed under the same license. This can create obstacles for enterprises that want to use open source code without offering their own software for open source purposes.
+> 
+> 3. Copyleft Licenses. These licenses require that any derived works must also be licensed under the same terms. This can be problematic for enterprise software solutions that must maintain confidentiality and not reveal proprietary algorithms or sensitive data.
+> 
+> 4. Creative Commons Non-Commercial Licenses. These licenses prohibit commercial use of the licensed code or derived works, which can limit the usage of the software within an enterprise.
+> 
+> 5. Affero General Public License Version 1. These licenses extend the GPL and also require the release of all source code in networked environments. This can make it difficult for enterprises that want to maintain their own proprietary software on their intranet or extranet.
+> 
+> It is recommended that enterprises consult with legal professionals to determine which open source licenses are most suitable for their needs.
